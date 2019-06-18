@@ -78,6 +78,14 @@ public class HomeController {
 	}
 	
 	
+	/*
+	@RequestMapping("article/newArticle.do")
+	public class NewArticleController{
+		public String form() {
+			return "article/newArticleForm";
+		}
+	}
+	*/
 	
 	
 	
