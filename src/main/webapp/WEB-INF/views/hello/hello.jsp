@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-연경이는 ${greeting}
+<%-- 연경이는 ${greeting} --%>
+
+인사말 : <strong><%= request.getAttribute("greeting") %></strong>
 </body>
 </html>
