@@ -1,6 +1,7 @@
 package com.my.ex;
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -53,7 +54,37 @@ public class HomeController {
 		ModelAndView mv = new ModelAndView();
 		mv.addObject("id",30);
 		mv.setViewName("borad/reply");
-		
 		return mv;
 	}
+	
+	@RequestMapping("/hello")
+	public ModelAndView hello() {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("greeting", getGreeting());
+		mv.setViewName("hello/hello");
+		return mv; 
+	}
+	
+	private String getGreeting() {
+		int hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY);
+		if(hour>=6 && hour<=10) {
+			return "좋은 아침 입니다.";
+		} else if(hour>=12 && hour<=15) {
+			return "점심식사는 하셨죠?";
+		} else if(hour>=18 && hour<=22) {
+			return "좋은 저녁식사 되세요!";
+		} 
+		return "즐거운 하루 입니다.";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
